@@ -1,10 +1,11 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: "./src/app.js",
   devServer: {
-    contentBase: "./dist",
+    static: "./dist",
     open: true,
   },
   output: {
@@ -39,5 +40,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "webpack output",
     }),
+    new CleanWebpackPlugin(),
   ],
 };
